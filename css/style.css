@@ -588,13 +588,13 @@ body {
 	min-height: 1000px;
 }
 #contact > div {
-	background-position: right 0;
+	background-position: left 0;
 	height: 500px;
 	width: 450px;
 	padding: 0 38px 0 10px;
 }
 #contact form {
-	float: right;
+	float: left;
 	width: 440px;
 	padding: 0 0 0 20px;
 }
@@ -605,6 +605,13 @@ body {
 	line-height: 24px;
 }
 #contact input.txtfield {
+	height: 25px;
+	width: 430px;
+	border: 1px solid #b3b3b3;
+	margin: 0 0 18px;
+	padding: 0 4px;
+}
+#contact select {
 	height: 25px;
 	width: 430px;
 	border: 1px solid #b3b3b3;
