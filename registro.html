@@ -7,39 +7,39 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 <script type="text/javascript">
 
-
-
 function registro(){
-	var data = $("myForm").serialize();
-    var boleta = document.getElementById("Boleta").value;  
-	var nombre = document.getElementById("Nombre").value;
-	var dire = document.getElementById("Dire").value;
-	var pass = document.getElementById("pass").value;
-	alert(pass);
-	if(boleta != "" && nombre != "" && dire != "" && pass != ""){
-        $.ajax({
-            url: "scripts/insert.php",
-            type: "POST",
-			cache: false,
-            data: data,
-            success: function(data)
-            {
-				if(data == 1)
+	$('#myForm').submit(function(e){
+		e.stopImmediatePropagation();
+		var data = $('#myForm').serialize();
+		var boleta = document.getElementById("Boleta").value;  
+		var nombre = document.getElementById("Nombre").value;
+		var dire = document.getElementById("Dire").value;
+		var pass = document.getElementById("pass").value;
+		if(boleta != "" && nombre != "" && dire != "" && pass != ""){
+			$.ajax({
+				url: "scripts/insert.php",
+				type: "POST",
+				cache: false,
+				data: data,
+				success: function(data)
 				{
-					alert("Se realizo correctamente el registro");
-					window.location.href = "signin.html";
+					if(data == 1)
+					{
+						alert("Se realizo correctamente el registro");
+						window.location.href = "signin.html";
+					}
+					else
+					{
+						alert("No se pudo hacer el registro, intentelo nuevamente");
+					}
+				},
+				error: function(){
+					alert('ERROR');
 				}
-				else
-				{
-					alert("No se pudo hacer el registro, intentelo nuevamente");
-				}
-            },
-            error: function(){
-                alert('ERROR');
-            }
-        });
-	}
-	return false;
+			});
+		}
+		return false;
+	});
 }
 
 </script>
@@ -68,7 +68,7 @@ function registro(){
 		</div>
 		<div id="contents">
 			<div id="contact">
-				<form method="POST" name="myForm" id="myForm">
+				<form method="post" name="myForm" id="myForm">
 					<h2>Registro</h2>
 					<label>Boleta</label>
 					<input type="text" value="" class="txtfield" name="Boleta" id="Boleta" required>
@@ -109,7 +109,7 @@ function registro(){
                     </select>
                     <label>Nombre del tutor</label>
 					<input type="text" value="" class="txtfield" name="tutor" id="tutor">
-					<input type="submit" value="Registrarse" class="btn" onclick="registro()">
+					<input type="submit" value="Registrarse" class="btn" name="submit" onclick="registro()">
 				</form>
 			</div>
 		</div>
