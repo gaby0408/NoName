@@ -24,6 +24,7 @@
 		{
 			$message = 2;
 			echo $message;
+			$conn = null;
 			exit;
 		}
 	$conn = null;
