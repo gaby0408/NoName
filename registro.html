@@ -1,9 +1,48 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
 	<title>Registro</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+<script type="text/javascript">
+
+function registro(){
+	$('#myForm').submit(function(e){
+		e.stopImmediatePropagation();
+		var data = $('#myForm').serialize();
+		var boleta = document.getElementById("Boleta").value;  
+		var nombre = document.getElementById("Nombre").value;
+		var dire = document.getElementById("Dire").value;
+		var pass = document.getElementById("pass").value;
+		if(boleta != "" && nombre != "" && dire != "" && pass != ""){
+			$.ajax({
+				url: "scripts/insert.php",
+				type: "POST",
+				cache: false,
+				data: data,
+				success: function(data)
+				{
+					if(data == 1)
+					{
+						alert("Se realizo correctamente el registro");
+						window.location.href = "signin.html";
+					}
+					else
+					{
+						alert("No se pudo hacer el registro, intentelo nuevamente");
+					}
+				},
+				error: function(){
+					alert('ERROR');
+				}
+			});
+		}
+		return false;
+	});
+}
+
+</script>
 </head>
 <body>
 	<div id="page">
@@ -29,37 +68,37 @@
 		</div>
 		<div id="contents">
 			<div id="contact">
-				<form action="#" method="post">
+				<form method="post" name="myForm" id="myForm">
 					<h2>Registro</h2>
 					<label>Boleta</label>
-					<input type="text" value="" class="txtfield">
+					<input type="text" value="" class="txtfield" name="Boleta" id="Boleta" required>
 					<label>Nombre</label>
-					<input type="text" value="" class="txtfield">
+					<input type="text" value="" class="txtfield" name="Nombre" id="Nombre" required>
 					<label>Dirección</label>
-					<input type="text" value="" class="txtfield">
+					<input type="text" value="" class="txtfield" name="Dire" id="Dire" required>
                     <label>Teléfono</label>
-					<input type="text" value="" class="txtfield">
+					<input type="text" value="" class="txtfield" name="Tel" id="Tel">
                     <label>Status</label>
-                    <select name="status">
-                        <option value="">Regular</option>
-                        <option value="">Irregular</option>
+                    <select name="status" id="Status">
+                        <option value="Regular">Regular</option>
+                        <option value="Irregular">Irregular</option>
                     </select>
                     <label>Promedio</label>
-					<input type="text" value="" class="txtfield">
+					<input type="text" value="" class="txtfield" name="prom" id="prom">
                     <label>Correo electrónico</label>
-					<input type="email" value="" class="txtfield">
+					<input type="email" value="" class="txtfield" name="correo" id="correo">
                     <label>Contraseña</label>
-					<input type="password" value="" class="txtfield">
+					<input type="password" value="" class="txtfield" name="pass" id="pass" required>
                     <label>Clave de la carrera</label>
-					<select name="cve_carrera">
-                        <option value="">N</option>
-                        <option value="">I</option>
-                        <option value="">C</option>
-                        <option value="">A</option>
-                        <option value="">T</option>
+					<select name="cve_carrera" id="cve_carrera">
+                        <option value="N">N</option>
+                        <option value="I">I</option>
+                        <option value="C">C</option>
+                        <option value="A">A</option>
+                        <option value="T">T</option>
                     </select>
                     <label>Plan de estudios</label>
-                    <select name="status">
+                    <select name="plan" id="plan">
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -69,8 +108,8 @@
                         <option value="07">07</option>
                     </select>
                     <label>Nombre del tutor</label>
-					<input type="text" value="" class="txtfield">
-					<input type="submit" value="Registrarse" class="btn">
+					<input type="text" value="" class="txtfield" name="tutor" id="tutor">
+					<input type="submit" value="Registrarse" class="btn" name="submit" onclick="registro()">
 				</form>
 			</div>
 		</div>
@@ -127,3 +166,5 @@
 	</div>
 </body>
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
