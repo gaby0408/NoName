@@ -22,9 +22,10 @@
 				data: data,
 				success: function(data)
 				{
-					if(data == 1)
+					
+					if(data != 2)
 					{
-						alert("Bienvenido");
+						alert("Bienvenido "+ data);
 						window.location.href = "index.html";
 					}
 					else
