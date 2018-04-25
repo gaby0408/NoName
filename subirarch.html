@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-	<title>SED</title>
+	<title>Subir archivo</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 				<a href="index.html" id="logo"><img src="images/logo.png" alt="Logo" height=60></a>
                 <span id="school">ESCA TEPEPAN</span>
 				<ul id="navigation">
-					<li class="selected">
+					<li>
 						<a href="index.html">Inicio</a>
 					</li>
 					<li>
@@ -29,42 +29,26 @@
 			<span class="shadow"></span>
 		</div>
 		<div id="contents">
-			<div id="body">
-                <h2>Bienvenido a la plataforma SED</h2>
-				<img src="images/ESCA.jpg" alt="ESCA" class="frame1">
-                  <div id="news">
-					<h3>Noticias</h3>
-					<ul>
-						<li>
-							<p>
-								Esta es una línea donde hay noticias
-							</p>
-						</li>
-						<li>
-							<p>
-								Una noticia podría ser que ya está funcionando este sistema
-							</p>
-						</li>
-					</ul>
-				</div>
-				<div id="updates">
-					<h3>Actualizaciones</h3>
-					<ul>
-						<li>
-							<span class="time">Junio 4-8 7am-9am</span>
-                            <a href="error.html">Derecho mercantil</a><br>Relaciones Comerciales
-						</li>
-						<li>
-							<span class="time">Junio 11-15 8am-10am</span>
-                            <a href="error.html">Operaciones de Comercio Exterior</a><br>Negocios Internacionales
-						</li>
-                        <li>
-							<span class="time">Junio 20-25 10am-12am</span>
-                            <a href="error.html">Análisis de Mercados Internacionales</a><br>Negocios Internacionales
-						</li>
-					</ul>
-				</div>
-			</div>
+			<div class="body">
+                <h2>Subir archivo</h2>
+                <div id="forms">
+                    <form method="post" name="" id="" class="form">
+                        <label>Curso</label>
+                        <select name="curso" id="curso">
+                            <option value="DM">Derecho mercantil</option>
+                            <option value="OCE">Operaciones de Comercio Exterior</option>
+                            <option value="AMI">Análisis de Mercados Internacionales</option>
+                        </select>
+                        <label>Título</label>
+                        <input type="text" name="title" id="title" class="txtfield" required><br>
+                        <label>Instrucciones</label>
+                        <input type="text" name="instr" id="instr" class="txtfield"><br>
+                        <label>Archivo</label>
+                        <input type="file" name="pdffile" accept="application/pdf"><br><br>
+                        <input type="submit" value="Enviar" class="btn" name="submit" id="submit" onclick="">
+                    </form>
+                </div>
+            </div>
 		</div>
 		<div id="footer">
 			<span class="shadow"></span>

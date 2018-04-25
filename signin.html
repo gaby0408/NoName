@@ -5,50 +5,46 @@
     <title>Iniciar sesión</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<script type="text/javascript">
-	
-	function actLogin(){
-	$('#myLogin').submit(function(e){
-	
-		e.stopImmediatePropagation();
-
-		var data = $('#myLogin').serialize();
-		var username = document.getElementById("username").value;  
-		var password = document.getElementById("password").value;
-		if(username != "" && password != ""){
-			$.ajax({
-				url: "scripts/login.php",
-				type: "POST",
-				cache: false,
-				data: data,
-				success: function(data)
-				{
-					
-					if(data != 2)
-					{
-						alert("Bienvenido "+ data);
-						window.location.href = "index.html";
-					}
-					else
-					{
-						alert("Usuario y/o contraseña incorrectos.");
-					}
-				},
-				error: function(){
-					alert('ERROR');
-				}
-			});
-		}
-		return false;
-	});
-}
-	
-	</script>
+        function actLogin(){
+            $('#myLogin').submit(function(e){
+                e.stopImmediatePropagation();
+                var data = $('#myLogin').serialize();
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                if(username != "" && password != ""){
+                    $.ajax({
+                        url: "scripts/login.php",
+                        type: "POST",
+                        cache: false,
+                        data: data,
+                        success: function(data)
+                        {
+                            if(data != 2)
+                                {
+                                    alert("Bienvenido "+ data);
+                                    window.location.href = "inicioalumno.html";
+                                }
+                            else
+                                {
+                                    alert("Usuario y/o contraseña incorrectos.");
+                                }
+                        },
+                        error: function(){
+                            alert('ERROR');
+                        }
+                    });
+                }
+                return false;
+            });
+        }
+    </script>
 </head>
 <body>
     <div id="page">
         <div id="header">
             <div>
-				<a href="index.html" id="logo"><img src="images/logoESCA.png" alt="Logo"></a>
+				<a href="index.html" id="logo"><img src="images/logo.png" alt="Logo" height=60></a>
+                <span id="school">ESCA TEPEPAN</span>
 				<ul id="navigation">
 					<li>
 						<a href="index.html">Inicio</a>
@@ -65,26 +61,27 @@
 				</ul>
 			</div>
             <span class="shadow"></span>
-    </div>
-    <div id="contents">
-      <div>
-        <h1>Entrar</h1>
-        <form method="post" class="formulario" name="myLogin" id="myLogin">
-          <label for="username">Nombre Usuario</label>
-          <input type="text" name="username" id="username" required><br>
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" required><br>
-          <input type="checkbox" name="remember" value="">Recordar contraseña<br>
-          <input type="submit" value="Entrar" class="btn" name="submit" id="submit" onclick="actLogin()">
-        </form>
-      </div>
-      <div class="contents">
-        <p>
-          <a href="contrasenia.html">Olvidé mi contraseña</a>
-          <a href="registro.html">Registrarse</a>
-        </p>
-      </div>
-    </div>
+        </div>
+        <div id="contents">
+            <div id="body">
+                <h2>Entrar</h2>
+                <div id="forms">
+                    <form method="post" name="myLogin" id="myLogin" class="form">
+                        <label>Nombre Usuario</label>
+                        <input type="text" name="username" id="username" class="txtfield" required><br>
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="txtfield" required><br>
+                        <input type="checkbox" name="remember" value="">Recordar contraseña<br><br>
+                        <input type="submit" value="Entrar" class="btn" name="submit" id="submit" onclick="actLogin()">
+                        <p>
+                            <br>
+                            <a href="contrasenia.html">Olvidé mi contraseña</a>
+                            <a href="registro.html">Registrarse</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div id="footer">
 			<span class="shadow"></span>
 			<div>
@@ -135,7 +132,7 @@
 				</div>
 			</div>
 		</div>
-      </div>
+    </div>
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
