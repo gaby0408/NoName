@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-	<title>Inicio Alumno</title>
+	<title>Inicio Profesor</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 						<a href="registro.html">Registro</a>
 					</li>
 					<li class="selected">
-						<a href="inicioalumno.html">Alumno</a>
+						<a href="inicioprf.html">Profesor</a>
 					</li>
 					<li>
 						<a href="acerca.html">Acerca</a>
@@ -49,8 +49,16 @@
                     </div>
 				</div>
 				<div id="middlepane">
-					<h2>Bienvenido Alumno "nombre"</h2>
-                    <input type="button" value="<< Volver" onclick="window.history.back();">
+					<h2>Bienvenido Profesor "nombre"</h2>
+                    <input type="button" value="<< Volver" onclick="window.history.back();">&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <input type="button" value="Crear Actividad / Subir Archivo" onclick="change_src()">
+                    <script>
+                        function change_src() {
+                            var myFrame = document.getElementById("iframe_a");
+                            myFrame.src = "subirarch.html";
+                            }
+                    </script>
 					<iframe src="blank.html" id="iframe_a" name="iframe_a" height="450px" width="499px"></iframe>
 				</div>
                 <div id="rightpane">
@@ -74,7 +82,7 @@
 							<a href="registro.html">Registro</a>
 						</li>
 						<li>
-							<a href="inicioalumno.html">Alumno</a>
+							<a href="inicioprf.html">Profesor</a>
 						</li>
 						<li>
 							<a href="acerca.html">Acerca</a>
