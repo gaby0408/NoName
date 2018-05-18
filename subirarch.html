@@ -2,34 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-	<title>Subir Archivo</title>
+	<title>Crear Actividad / Subir Archivo</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<div id="minibody">
-        <h3>Crear Actividad / Subir archivo</h3>
+        <h3>Crear Actividad / Subir Archivo</h3>
         <div id="forms">
-            <form method="post" name="" id="" class="form">
+            <form method="post" action="subir.php" enctype="multipart/form-data">
                 <label>Curso</label>
                 <select name="curso" id="curso">
                     <option value="DM">Derecho mercantil</option>
                     <option value="OCE">Operaciones de Comercio Exterior</option>
                     <option value="AMI">Análisis de Mercados Internacionales</option>
                 </select>
-                <label>Tipo</label>
-                <select name="tipo" id="tipo">
-                    <option value="act">Crear Actividad</option>
-                    <option value="arch">Subir Archivo</option>
-                </select>
                 <label>Título</label>
-                <input type="text" name="title" id="title" class="txtfield" required><br>
+                <input type="text" name="title" id="title" class="txtfield"><br>
                 <label>Instrucciones</label>
                 <input type="text" name="instr" id="instr" class="txtfield"><br>
                 <label>Archivo</label>
-                <input type="file" name="pdffile" accept="application/pdf"><br><br>
-                <input type="submit" value="Enviar" class="btn" name="submit" id="submit" onclick="">
+                <input type="file" name="archivo"><br><br>
+                <input type="submit" value="Enviar" class="btn" name="boton">
             </form>
-		</div>
-	</div>
+        </div>
+    </div>
 </body>
 </html>

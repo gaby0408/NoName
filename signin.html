@@ -22,7 +22,7 @@
                             if(data != 2)
                                 {
                                     alert("Bienvenido "+ data);
-                                    window.location.href = "inicioalumno.html";
+                                    window.location.href = "inicioalumno.php";
                                 }
                             else
                                 {
@@ -67,6 +67,11 @@
                 <h2>Entrar</h2>
                 <div id="forms">
                     <form method="post" name="myLogin" id="myLogin" class="form">
+                        <label>Perfil</label>
+                        <select name="perfil" id="perfil">
+                            <option value="A">Alumno</option>
+                            <option value="P">Profesor</option>
+                        </select>
                         <label>Nombre Usuario</label>
                         <input type="text" name="username" id="username" class="txtfield" required><br>
                         <label for="password">Contraseña</label>

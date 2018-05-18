@@ -19,7 +19,7 @@
 						<a href="registro.html">Registro</a>
 					</li>
 					<li class="selected">
-						<a href="inicioalumno.html">Alumno</a>
+						<a href="inicioalumno.php">Alumno</a>
 					</li>
 					<li>
 						<a href="acerca.html">Acerca</a>
@@ -36,7 +36,7 @@
 						<ul>
                             <li><a href="dmerca.html" target="iframe_a">Derecho mercantil</a></li>
                             <li><a href="error.html" target="iframe_a">Operaciones de Comercio Exterior</a></li>
-                            <li><a href="error.html" target="iframe_a">Análisis de Mercados Internacionales</a></li>
+							<li><a href="error.html" target="iframe_a">Análisis de Mercados Internacionales</a></li>
                         </ul>
                     </div>
                     <hr>
@@ -49,15 +49,26 @@
                     </div>
 				</div>
 				<div id="middlepane">
-					<h2>Bienvenido Alumno "nombre"</h2>
+					<h2>Bienvenido alumno "nombre"</h2>
                     <input type="button" value="<< Volver" onclick="window.history.back();">
-					<iframe src="blank.html" id="iframe_a" name="iframe_a" height="450px" width="499px"></iframe>
+					<iframe src="blank.html" name="iframe_a" height="450px" width="499px"></iframe>
 				</div>
                 <div id="rightpane">
 					<h3>Calendario de Actividades</h3>
-					<p>Calendario</p>
+                    <p>Aquí debería ir un calendario</p>
                     <hr>
-                    <h3>Repositorio</h3>
+					<h3>Repositorio</h3>
+					<?php
+					$directorio = 'guardar/';
+         				if($dir = opendir($directorio)){
+             				while($archivo = readdir($dir)){
+                 				if($archivo != '.' && $archivo != '..'){
+									$ruta_archivo = $directorio.$archivo;
+                     				echo "<a href='$ruta_archivo'>$archivo</a><br/>";
+                 				}
+             				}
+         				}
+					?>				
 				</div>
             </div>
 		</div>
@@ -74,7 +85,7 @@
 							<a href="registro.html">Registro</a>
 						</li>
 						<li>
-							<a href="inicioalumno.html">Alumno</a>
+							<a href="inicioalumno.php">Alumno</a>
 						</li>
 						<li>
 							<a href="acerca.html">Acerca</a>

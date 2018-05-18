@@ -11,9 +11,8 @@
                 var data = $('#myForm').serialize();
                 var boleta = document.getElementById("Boleta").value;
                 var nombre = document.getElementById("Nombre").value;
-                var dire = document.getElementById("Dire").value;
                 var pass = document.getElementById("pass").value;
-                if(boleta != "" && nombre != "" && dire != "" && pass != ""){
+                if(boleta != "" && nombre != "" && pass != ""){
                     $.ajax({
                         url: "scripts/insert.php",
                         type: "POST",
@@ -28,7 +27,7 @@
                                 }
                             else
                                 {
-                                    alert("No se pudo hacer el registro, inténtelo nuevamente");
+                                    alert("No se pudo realizar el registro");
                                 }
                         },
                         error: function(){
@@ -87,13 +86,13 @@
                         </select>
                         <label>Plan de estudios</label>
                         <select name="plan" id="plan">
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7">07</option>
                         </select>
                         <label>Nombre del tutor</label>
                         <input type="text" value="" class="txtfield" name="tutor" id="tutor">
